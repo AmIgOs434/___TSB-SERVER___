@@ -273,6 +273,7 @@ async updateQuantity (req, res) {
             where: {id},
         }
     )
+
     const quant = device1.quantity
     const device =  await SizeColor.update(
     {
@@ -294,7 +295,7 @@ async updateQuantity (req, res) {
 }
 
 
-async createBasketDevice(req, res) {
+async   createBasketDevice(req, res) {
         
     const {basketId,deviceId,quantity,final_price,color,colorId,size,sizeId,status,name,img} = req.body
     const basketDevice = await BasketDevice.create({basketId,deviceId,quantity,color,sizeId,colorId,final_price,size,status,name,img})
@@ -465,9 +466,10 @@ async updateOneBasketDevice (req, res) {
     },
     {
         where :{ 
+            id: req.body.basketId1 ,
                   deviceId: id,
                   sizeId:req.body.sizeId,
-                  color:req.body.color
+                  colorId:req.body.colorId
                }
     }
     

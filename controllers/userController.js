@@ -118,7 +118,11 @@ class userController {
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({token})
     }
-
+    async check1() {
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwNTk4MjY2NDMwIiwiZW1haWwiOiJhbWlnb3NAZ21haWwucnUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTY4OTQ4NTYzOCwiZXhwIjoxNjg5NTcyMDM4fQ.Zp4b-wwSHCauJ_vpv4YvjB9ElXfFUo9wNWKYlPxXyXc'
+        const token1 = jwt.verify(token, process.env.SECRET_KEY)
+        return (token1)
+    }
         async check_admin(req, res, next) {
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({token})

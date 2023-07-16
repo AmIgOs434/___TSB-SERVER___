@@ -117,7 +117,7 @@ const Order = sequelize.define('order', {
     address:{type: DataTypes.STRING, allowNull: false},
     final_price: {type: DataTypes.INTEGER, allowNull: false},
     email: {type: DataTypes.STRING, allowNull: false},
-    phone: {type: DataTypes.INTEGER, allowNull: false},
+    phone: {type: DataTypes.STRING, allowNull: false},
     user :{type: DataTypes.BIGINT, allowNull: false},
     status: {type: DataTypes.STRING, allowNull: false, defaultValue: "Заказ ожидает оплаты  "},
     comment: {type: DataTypes.STRING}, 
